@@ -82,7 +82,10 @@ const MediaFeedScreen = () => {
   };
   const navigation = useNavigation<MediaFeedScreenNavigationProp>();
   const videoRef = useRef(null); // Reference for the video player
+  const loadMedia = () => {
+    // Simulating pagination
 
+  };
   return (
     <View style={styles.container}>
       <FlatList
@@ -95,6 +98,7 @@ const MediaFeedScreen = () => {
             <MediaItem videoRef={videoRef} type={item.type} uri={item.uri} />
           </TouchableOpacity>
         )}
+        onEndReached={loadMedia}
       />
     </View>
   );
